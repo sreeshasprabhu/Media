@@ -1,0 +1,51 @@
+<div class="banner ">
+    <div class="container" style="width: 28%;margin-bottom: 7%;">
+        <div class="row  sign ">
+          <!-- <img src="./assets/images/home.png" alt="Logo" style="width:500px; margin-top: 50px;"> -->
+        <div class="col-md-12 col-md-offset-0">
+      <div>
+        <form  #userupload="ngForm" style="margin-top: 50px;" enctype="multipart/form-data">
+            
+              
+            <div class="form-group pl-2 pr-2 mt-3">
+              <label>Select Video</label>
+              <input type="file" class="form-control" name="video" id="" #video="ngModel" [(ngModel)]="userupload.video" [class.is-invalid]="video.invalid && video.touched" accept="video/*" required >
+              
+              
+            </div>
+            <div class="form-group pl-2 pr-2 mt-3">
+              <label >Select Thumbnail</label>
+              <input type="file" class="form-control" name="thumbnail" id="thumbnail" #thumbnail="ngModel"   [(ngModel)]="userupload.thumbnail" [class.is-invalid]="thumbnail.invalid && thumbnail.touched"  required >
+                 
+            </div>        
+              <div class="form-group pl-2 pr-2 mt-3">
+                <label >Title</label>
+                <input type="text" class="form-control" name="title" id="title" #title="ngModel"  [class.is-invalid]="title.invalid && title.touched"  [(ngModel)]="userupload.title" required >
+              </div>
+              <div class="form-group pl-2 pr-2 mt-3">
+                <label >Description</label><br>
+                <textarea name="description" id="description" cols="50" [(ngModel)]="userupload.description"   required></textarea>
+              </div>
+              <div class="form-group pl-2 pr-2 mt-3">
+                <label >Tags</label>
+                <input type="text" class="form-control" name="tags" id="tags" #tags="ngModel"  [class.is-invalid]="tags.invalid && tags.touched"  [(ngModel)]="userupload.tags" required >
+              </div>
+              <div class="form-group pl-2 pr-2 mt-3">
+                <label >Category</label>
+                <select class="form-control" [(ngModel)]="userupload.category" name="category" id="category" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Education">Education</option>
+                    <option value="Enternainment">Enternainment</option>
+                </select>
+              </div>
+              <div class="form-group text-center  mb-4">
+            <button type="submit" class="btn btn-warning  btn-lg " name="" [disabled]="userupload.form.invalid">Upload</button>
+         </div>
+          </form>
+        
+    </div>
+    </div>
+    </div>
+    </div>
+</div>

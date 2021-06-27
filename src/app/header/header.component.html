@@ -10,11 +10,13 @@
            <!-- <a class="navbar-brand" href="#">
                <img src="./assets/images/flogo.png" alt="Logo" style="width:175px;">
              </a> -->
-             <a class="nav-link active header" routerLink="" >Home</a>            
-             <a class="nav-link active header"  routerLink="/signup">SignUp</a> 
-             <a class="nav-link active header"   routerLink="/login" >Login</a>
-             <a class="nav-link active header"   routerLink="/admin" >Admin</a> 
-             <!-- <a class="nav-link active header"  style="cursor:pointer">LogOut</a> -->
+             <a class="nav-link active header" *ngIf="!_auth.loggedIn()" routerLink="" >Home</a>  
+             <a class="nav-link active header" *ngIf="_auth.loggedIn()" routerLink="/userdashboard" >Home</a> 
+             <a class="nav-link active header" *ngIf="_auth.loggedIn()" routerLink="/userupload" >Upload</a>           
+             <a class="nav-link active header" *ngIf="!_auth.loggedIn()" routerLink="/signup">SignUp</a> 
+             <a class="nav-link active header"  *ngIf="!_auth.loggedIn()" routerLink="/login" >Login</a>
+             <a class="nav-link active header"  *ngIf="!_auth.loggedIn()" routerLink="/admin" >Admin</a> 
+             <a class="nav-link active header" *ngIf="_auth.loggedIn()" style="cursor:pointer"(click)="logoutUser()" >LogOut</a>
                         
           </ul>
        

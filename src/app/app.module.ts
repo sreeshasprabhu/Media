@@ -9,7 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { SuperadminComponent } from './superadmin/superadmin.component';
-
+import { HttpClientModule,HTTP_INTERCEPTORS } from "@angular/common/http";
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { UseruploadComponent } from './userupload/userupload.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,15 @@ import { SuperadminComponent } from './superadmin/superadmin.component';
     FooterComponent,
     SignupComponent,
     LoginComponent,
-    SuperadminComponent
+    SuperadminComponent,
+    UserdashboardComponent,
+    UseruploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
